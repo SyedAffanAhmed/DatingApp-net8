@@ -17,14 +17,5 @@ namespace API.Controllers
             
         }
 
-        [HttpGet("{id:int}")] // /api/users/2 
-        public async Task<ActionResult<AppUser>> GetUser(int id)
-        {
-            var user = await context.Users.FindAsync(id);
-            if (user == null) return NotFound();
-            return user;
-
-        }
-
     }
 }
